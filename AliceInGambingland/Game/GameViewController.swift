@@ -10,7 +10,8 @@ import UIKit
 
 class GameViewController: UIViewController {
     // MARK: - Properties
-    private var gameStartView = GameStartView()
+    private var gameStartView: GameStartView?
+    private var gameSpinnerView: GameSpinnerView?
     private var viewModel: GameViewModel
     
     init(viewModel: GameViewModel) {
@@ -25,13 +26,31 @@ class GameViewController: UIViewController {
     // MARK: - Lifecycle
     override func loadView() {
         super.loadView()
+        gameStartView = GameStartView()
+        gameSpinnerView = GameSpinnerView()
         self.view = gameStartView
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addTarget()
     }
     
+    // MARK: - Methods
+    private func addTarget() {
+        self.gameStartView?.myKingChip.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(targetForTrans)))
+        
+        self.gameSpinnerView?.fortuneWheel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(targetForSpin)))
+    }
+    // MARK: - @objc methods
+    @objc
+    private func targetForTrans() {
+        self.view = gameSpinnerView
+    }
     
+    @objc
+    private func targetForSpin() {
+            UIView.animate(withDuration: 3) {
+                self.gameSpinnerView?.fortuneWheel.transform = CGAffineTransform(rotationAngle: 10000)
+        }
+    }
 }

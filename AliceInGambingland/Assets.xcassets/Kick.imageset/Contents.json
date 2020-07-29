@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "spin the wheel  to kick  enemy’s chips!@1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "spin the wheel  to kick  enemy’s chips!@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "spin the wheel  to kick  enemy’s chips!@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

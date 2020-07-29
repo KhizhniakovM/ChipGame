@@ -10,8 +10,8 @@ import UIKit
 
 class ChooseColorView: ChooseView {
     // MARK: - UI
-    lazy var letStart = UILabel.makeBangerLabel(withText: "LET'S START!", font: Constants.Fonts.secondary, lines: 1)
-    lazy var chooseColorLabel = UILabel.makeBangerLabel(withText: "CHOOSE YOUR COLOR:", font: Constants.Fonts.main, lines: 2)
+    lazy var letStart = UILabel.makeBangerLabel(withText: "LET'S START! ", font: Constants.Fonts.secondary, lines: 1)
+    lazy var chooseColorLabel = UILabel.makeBangerLabel(withText: "CHOOSE YOUR COLOR: ", font: Constants.Fonts.main, lines: 2)
     
     lazy var nextButton = UILabel.makeBangerLabel(withText: "NEXT >", font: Constants.Fonts.tertiary, lines: 1)
     lazy var whiteButton = UIButton.makeChooseColorButton(with: .white)
@@ -23,7 +23,7 @@ class ChooseColorView: ChooseView {
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fillEqually
-        stack.spacing = 20
+        stack.spacing = 30
         return stack
     }()
     
@@ -38,26 +38,30 @@ class ChooseColorView: ChooseView {
     
     // MARK: - Methods
     private func setupView() {
+        nextButton.textAlignment = .left
+        
         self.addSubview(letStart)
         self.addSubview(chooseColorLabel)
         self.addSubview(colorStack)
         self.addSubview(nextButton)
         
+        nextButton.isHidden = true
+        
         NSLayoutConstraint.activate([
             letStart.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            letStart.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            letStart.topAnchor.constraint(equalTo: self.topAnchor, constant: UIScreen.main.bounds.height / 6),
             
             chooseColorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            chooseColorLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 200),
-            chooseColorLabel.widthAnchor.constraint(equalToConstant: 300),
+            chooseColorLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: UIScreen.main.bounds.height / 5),
+            chooseColorLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7),
             
             colorStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            colorStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 400),
-            colorStack.widthAnchor.constraint(equalToConstant: 200),
-            colorStack.heightAnchor.constraint(equalToConstant: 100),
+            colorStack.topAnchor.constraint(equalTo: chooseColorLabel.bottomAnchor, constant: UIScreen.main.bounds.height / 40),
+            colorStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5),
+            colorStack.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.225),
             
-            nextButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            nextButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 600),
+            nextButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: UIScreen.main.bounds.width / 3),
+            nextButton.topAnchor.constraint(equalTo: self.topAnchor, constant: UIScreen.main.bounds.height / 1.6),
         ])
     }
 }

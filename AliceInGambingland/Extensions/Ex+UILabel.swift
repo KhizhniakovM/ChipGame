@@ -16,8 +16,9 @@ extension UILabel {
         label.translatesAutoresizingMaskIntoConstraints = false
         guard let font = font else { return label }
         label.font = font
+        label.adjustsFontSizeToFitWidth = true
         label.textColor = .white
-        label.text = withText
+        label.text = withText + " "
         label.numberOfLines = lines
         label.textAlignment = .center
         return label

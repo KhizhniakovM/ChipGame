@@ -70,6 +70,7 @@ class ChooseViewController: UIViewController {
     // MARK: - @objc methods
     @objc
     private func targetForColorButton(sender: UIButton) {
+        self.chooseColorView.nextButton.isHidden = false
         switch sender {
         case self.chooseColorView.redButton:
             if self.chooseColorView.whiteButton.isSelected {

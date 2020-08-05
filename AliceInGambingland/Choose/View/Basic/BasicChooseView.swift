@@ -8,20 +8,20 @@
 
 import UIKit
 
-class ChooseView: UIView {
+class BasicChooseView: UIView {
 
     // MARK: - UI
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "BluredBcgr")
+        imageView.image = Constants.bluredBcgr
         return imageView
     }()
     
     lazy var overlayImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "DarkenOverlay")
+        imageView.image = Constants.darkenOverlay
         return imageView
     }()
     

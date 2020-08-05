@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChooseColorView: ChooseView {
+class ChooseColorView: BasicChooseView {
     // MARK: - UI
     lazy var letStart = UILabel.makeBangerLabel(withText: "LET'S START! ", font: Constants.Fonts.secondary, lines: 1)
     lazy var chooseColorLabel = UILabel.makeBangerLabel(withText: "CHOOSE YOUR COLOR: ", font: Constants.Fonts.main, lines: 2)

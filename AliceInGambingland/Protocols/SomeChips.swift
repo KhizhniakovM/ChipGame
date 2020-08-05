@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol SomeChips {
+    var king: Chip { get set }
+    
+    var firstDefender: Chip { get set }
+    var secondDefender: Chip { get set }
+    var thirdDefender: Chip { get set }
+}

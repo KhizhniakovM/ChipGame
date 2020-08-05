@@ -9,6 +9,7 @@
 import UIKit
 
 class GameStartView: BasicGameView {
+    var completion: ((Color) -> Void)?
     
     // MARK: - UI
     // MARK: - FortuneWheel, FortuneArrow
@@ -18,9 +19,10 @@ class GameStartView: BasicGameView {
         arrow.image = UIImage(named: "Arrow")
         return arrow
     }()
-    lazy var fortuneWheel: UIImageView = {
-        let wheel = UIImageView()
+    lazy var fortuneWheel: FortuneWheel = {
+        let wheel = FortuneWheel()
         wheel.translatesAutoresizingMaskIntoConstraints = false
+        wheel.completion = { self.completion!(wheel.result) }
         wheel.image = UIImage(named: "FortuneWheel")
         wheel.isUserInteractionEnabled = true
         return wheel
@@ -96,6 +98,14 @@ class GameStartView: BasicGameView {
         chip.translatesAutoresizingMaskIntoConstraints = false
         return chip
     }()
+    // MARK: - Boom animation
+    lazy var boom: UIImageView = {
+        let boom = UIImageView()
+        boom.translatesAutoresizingMaskIntoConstraints = false
+        boom.image = Constants.boom
+        return boom
+    }()
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -131,22 +141,22 @@ class GameStartView: BasicGameView {
             arrow.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             arrow.topAnchor.constraint(equalTo: self.topAnchor, constant: UIScreen.main.bounds.height / 30),
             arrow.widthAnchor.constraint(equalTo: arrow.heightAnchor),
-            arrow.widthAnchor.constraint(equalTo: fortuneWheel.widthAnchor, multiplier: 0.35),
+            arrow.widthAnchor.constraint(equalTo: fortuneWheel.widthAnchor, multiplier: 0.375),
             
             fortuneWheel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            fortuneWheel.topAnchor.constraint(equalTo: self.topAnchor, constant: UIScreen.main.bounds.height / 17.5),
+            fortuneWheel.topAnchor.constraint(equalTo: self.topAnchor, constant: UIScreen.main.bounds.height / 15),
             fortuneWheel.heightAnchor.constraint(equalTo: fortuneWheel.widthAnchor),
             fortuneWheel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.325),
             
-            leftPlayer.heightAnchor.constraint(equalTo: leftPlayer.widthAnchor),
-            leftPlayer.heightAnchor.constraint(equalTo: rightPlayer.heightAnchor),
-            leftPlayer.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: UIScreen.main.bounds.width / 3),
-            leftPlayer.centerYAnchor.constraint(equalTo: fortuneWheel.centerYAnchor),
-            
             rightPlayer.heightAnchor.constraint(equalTo: rightPlayer.widthAnchor),
-            rightPlayer.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -(UIScreen.main.bounds.width / 3)),
-            rightPlayer.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 6),
+            rightPlayer.heightAnchor.constraint(equalTo: leftPlayer.heightAnchor),
+            rightPlayer.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: UIScreen.main.bounds.width / 3),
             rightPlayer.centerYAnchor.constraint(equalTo: fortuneWheel.centerYAnchor),
+            
+            leftPlayer.heightAnchor.constraint(equalTo: leftPlayer.widthAnchor),
+            leftPlayer.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -(UIScreen.main.bounds.width / 3)),
+            leftPlayer.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 6),
+            leftPlayer.centerYAnchor.constraint(equalTo: fortuneWheel.centerYAnchor),
             
             arrowTurnLeft.centerYAnchor.constraint(equalTo: fortuneWheel.centerYAnchor),
             arrowTurnLeft.heightAnchor.constraint(equalTo: fortuneWheel.heightAnchor, multiplier: 0.25),
@@ -202,8 +212,98 @@ class GameStartView: BasicGameView {
             enemyThirdDefChip.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.0625),
             enemyThirdDefChip.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.16),
         ])
-        
-        
     }
-
+    
+    func addBoomToDiedChip(from group: Group, state: Int) {
+        switch state {
+        case 1:
+            if group == .player {
+                self.myFirstDefChip.addSubview(boom)
+                NSLayoutConstraint.activate([
+                    self.boom.topAnchor.constraint(equalTo: self.myFirstDefChip.topAnchor),
+                    self.boom.leadingAnchor.constraint(equalTo: self.myFirstDefChip.leadingAnchor),
+                    self.boom.trailingAnchor.constraint(equalTo: self.myFirstDefChip.trailingAnchor),
+                    self.boom.bottomAnchor.constraint(equalTo: self.myFirstDefChip.bottomAnchor),
+                ])
+            } else {
+                self.enemyFirstDefChip.addSubview(boom)
+                NSLayoutConstraint.activate([
+                    self.boom.topAnchor.constraint(equalTo: self.enemyFirstDefChip.topAnchor),
+                    self.boom.leadingAnchor.constraint(equalTo: self.enemyFirstDefChip.leadingAnchor),
+                    self.boom.trailingAnchor.constraint(equalTo: self.enemyFirstDefChip.trailingAnchor),
+                    self.boom.bottomAnchor.constraint(equalTo: self.enemyFirstDefChip.bottomAnchor),
+                ])
+            }
+        case 2:
+            if group == .player {
+                self.mySecondDefChip.addSubview(boom)
+                NSLayoutConstraint.activate([
+                    self.boom.topAnchor.constraint(equalTo: self.mySecondDefChip.topAnchor),
+                    self.boom.leadingAnchor.constraint(equalTo: self.mySecondDefChip.leadingAnchor),
+                    self.boom.trailingAnchor.constraint(equalTo: self.mySecondDefChip.trailingAnchor),
+                    self.boom.bottomAnchor.constraint(equalTo: self.mySecondDefChip.bottomAnchor),
+                ])
+            } else {
+                self.enemySecondDefChip.addSubview(boom)
+                NSLayoutConstraint.activate([
+                    self.boom.topAnchor.constraint(equalTo: self.enemySecondDefChip.topAnchor),
+                    self.boom.leadingAnchor.constraint(equalTo: self.enemySecondDefChip.leadingAnchor),
+                    self.boom.trailingAnchor.constraint(equalTo: self.enemySecondDefChip.trailingAnchor),
+                    self.boom.bottomAnchor.constraint(equalTo: self.enemySecondDefChip.bottomAnchor),
+                ])
+            }
+        case 3:
+            if group == .player {
+                self.myThirdDefChip.addSubview(boom)
+                NSLayoutConstraint.activate([
+                    self.boom.topAnchor.constraint(equalTo: self.myThirdDefChip.topAnchor),
+                    self.boom.leadingAnchor.constraint(equalTo: self.myThirdDefChip.leadingAnchor),
+                    self.boom.trailingAnchor.constraint(equalTo: self.myThirdDefChip.trailingAnchor),
+                    self.boom.bottomAnchor.constraint(equalTo: self.myThirdDefChip.bottomAnchor),
+                ])
+            } else {
+                self.enemyThirdDefChip.addSubview(boom)
+                NSLayoutConstraint.activate([
+                    self.boom.topAnchor.constraint(equalTo: self.enemyThirdDefChip.topAnchor),
+                    self.boom.leadingAnchor.constraint(equalTo: self.enemyThirdDefChip.leadingAnchor),
+                    self.boom.trailingAnchor.constraint(equalTo: self.enemyThirdDefChip.trailingAnchor),
+                    self.boom.bottomAnchor.constraint(equalTo: self.enemyThirdDefChip.bottomAnchor),
+                ])
+            }
+        default:
+            print("End of the game")
+        }
+    }
+    
+    func prepareForTransitionToSpinner() {
+        self.fortuneWheel.isHidden = true
+        self.arrow.isHidden = true
+        self.leftPlayer.isHidden = true
+        self.rightPlayer.isHidden = true
+        self.arrowTurnLeft.isHidden = true
+        self.arrowTurnRight.isHidden = true
+        self.turnLabel.isHidden = true
+    }
+    
+    func deleteAllChipsFromView() {
+        self.myKingChip.isHidden = true
+        self.myFirstDefChip.isHidden = true
+        self.mySecondDefChip.isHidden = true
+        self.myThirdDefChip.isHidden = true
+        self.enemyKingChip.isHidden = true
+        self.enemyFirstDefChip.isHidden = true
+        self.enemySecondDefChip.isHidden = true
+        self.enemyThirdDefChip.isHidden = true
+        
+        self.arrowTurnLeft.isHidden = true
+        self.arrowTurnRight.isHidden = true
+    }
+    
+    func completionForSpinner() {
+        self.fortuneWheel.isHidden = false
+        self.arrow.isHidden = false
+        self.leftPlayer.isHidden = false
+        self.rightPlayer.isHidden = false
+        self.arrowTurnRight.isHidden = false
+    }
 }

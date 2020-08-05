@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ChooseDefenderView: UIView {
+class BasicDefenderView: UIView {
     // MARK: - Properties
     var choosenColor: Color = .white
+    
     // MARK: - UI
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -59,9 +60,9 @@ class ChooseDefenderView: UIView {
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor),
             
             upButton.widthAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.4),
-            upButton.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.1),
+            upButton.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.125),
             downButton.widthAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.4),
-            downButton.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.1),
+            downButton.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.125),
             
             stack.topAnchor.constraint(equalTo: self.topAnchor),
             stack.leftAnchor.constraint(equalTo: self.leftAnchor),

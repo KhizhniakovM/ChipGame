@@ -6,4 +6,12 @@
 //  Copyright © 2020 Max Khizhniakov. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol SpinnerView {
+    var goldenOverlay: UIImageView { get set }
+    var arrow: UIImageView { get set }
+    var fortuneWheel: FortuneWheel { get set }
+    
+    var completion: ((Color) -> Void)? { get set }
+}

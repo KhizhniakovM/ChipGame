@@ -14,11 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let viewModel = ChooseViewModel()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ChooseViewController(viewModel: viewModel)
+        window?.rootViewController = ChooseViewController(viewModel: ChooseViewModel(),
+                                                          chooseColorView: ChooseColorView(),
+                                                          chooseDefendersView: ChooseDefendersView())
         window?.makeKeyAndVisible()
+        
+        // Set default count of golden chips.
+        if UserDefaults.standard.object(forKey: "GoldenChips") == nil {
+            UserDefaults.standard.set(200, forKey: "GoldenChips")
+        }
+        
         return true
     }
 }

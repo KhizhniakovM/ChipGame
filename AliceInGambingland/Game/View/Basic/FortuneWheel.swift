@@ -37,14 +37,14 @@ class FortuneWheel: UIImageView, CAAnimationDelegate {
     }
 
     func spin() {
-        startAnimation(speed: Int.random(in: 500...1000), direction: .clockwise)
+        startAnimation(speed: Int.random(in: 2000...3000), direction: .clockwise)
     }
     
     private func startAnimation(speed: Int, direction : SpinningDirection) {
 
         var duration = Double(speed) / 10
         if duration > 5 { duration = 5 }
-        if duration < 2 { duration = 2 }
+        if duration < 1 { duration = 1 }
 
         let multiplier = (direction == .clockwise) ? -1.0 : 1.0
         let normalizedSpeed = Double(speed) / 100 * multiplier
@@ -69,7 +69,7 @@ class FortuneWheel: UIImageView, CAAnimationDelegate {
     }
 
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        self.isUserInteractionEnabled = true
+        self.isUserInteractionEnabled = false
         
         let transform: CATransform3D = self.layer.presentation()!.transform
         let angle = atan2(transform.m12, transform.m11)

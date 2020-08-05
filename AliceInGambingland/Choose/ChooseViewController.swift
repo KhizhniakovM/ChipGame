@@ -10,13 +10,16 @@ import UIKit
 
 class ChooseViewController: UIViewController {
     // MARK: - Properties
-    private var chooseColorView = ChooseColorView()
-    private var chooseDefendersView = ChooseDefendersView()
-    private var viewModel: ChooseViewModel
+    var chooseColorView: ChooseColorView
+    var chooseDefendersView: ChooseDefendersView
+    var viewModel: ChooseViewModel
     
     // MARK: - Initializer
-    init(viewModel: ChooseViewModel) {
+    init(viewModel: ChooseViewModel, chooseColorView: ChooseColorView, chooseDefendersView: ChooseDefendersView) {
         self.viewModel = viewModel
+        self.chooseColorView = chooseColorView
+        self.chooseDefendersView = chooseDefendersView
+        
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -27,6 +30,11 @@ class ChooseViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = chooseColorView
+// To check finish Screen
+//        let basic = BasicFinishGameView()
+//        basic.totalRewardStack.isHidden = false
+//        basic.winnerChip.image = Constants.redChip
+//        self.view = basic
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +42,10 @@ class ChooseViewController: UIViewController {
     }
     
     // MARK: - Methods
+    func startNewGame() {
+        self.view = chooseColorView
+    }
+    
     private func setupButtons() {
         self.chooseColorView.nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(targetForNextButton)))
         self.chooseColorView.whiteButton.addTarget(self, action: #selector(targetForColorButton), for: .touchUpInside)
@@ -49,7 +61,7 @@ class ChooseViewController: UIViewController {
         self.chooseDefendersView.nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toPlayVC)))
     }
     
-    private func changeColor(defender: ChooseDefenderView) {
+    private func changeColor(defender: BasicDefenderView) {
         if defender.choosenColor == .white {
             defender.downButton.isEnabled = false
             defender.upButton.isEnabled = true
@@ -73,15 +85,19 @@ class ChooseViewController: UIViewController {
         self.chooseColorView.nextButton.isHidden = false
         switch sender {
         case self.chooseColorView.redButton:
+            self.viewModel.myChips.king.color = .red
             if self.chooseColorView.whiteButton.isSelected {
                 self.chooseColorView.whiteButton.isSelected.toggle()
             }
             sender.isSelected.toggle()
-        default:
+        case self.chooseColorView.whiteButton:
+            self.viewModel.myChips.king.color = .white
             if self.chooseColorView.redButton.isSelected {
                 self.chooseColorView.redButton.isSelected.toggle()
             }
             sender.isSelected.toggle()
+        default:
+            fatalError("There is only two buttons")
         }
     }
     
@@ -99,10 +115,13 @@ class ChooseViewController: UIViewController {
         switch sender {
         case firstDef.upButton:
             changeColor(defender: firstDef)
+            self.viewModel.myChips.firstDefender.color = .white
         case secondDef.upButton:
             changeColor(defender: secondDef)
+            self.viewModel.myChips.secondDefender.color = .white
         case thirdDef.upButton:
             changeColor(defender: thirdDef)
+            self.viewModel.myChips.thirdDefender.color = .white
         default:
             fatalError("There is not default button")
         }
@@ -118,10 +137,13 @@ class ChooseViewController: UIViewController {
         switch sender {
         case firstDef.downButton:
             changeColor(defender: firstDef)
+            self.viewModel.myChips.firstDefender.color = .red
         case secondDef.downButton:
             changeColor(defender: secondDef)
+            self.viewModel.myChips.secondDefender.color = .red
         case thirdDef.downButton:
             changeColor(defender: thirdDef)
+            self.viewModel.myChips.thirdDefender.color = .red
         default:
             fatalError("There is not default button")
         }
@@ -130,7 +152,12 @@ class ChooseViewController: UIViewController {
     @objc
     private func toPlayVC() {
         let viewModel = GameViewModel()
-        let gameVC = GameViewController(viewModel: viewModel)
+        viewModel.myChips = self.viewModel.myChips
+        viewModel.enemyChips = self.viewModel.enemyChips
+        viewModel.chipper = Chipper()
+        
+        let gameVC = GameViewController(viewModel: viewModel,
+                                        gameStartView: GameStartView())
         gameVC.modalPresentationStyle = .fullScreen
         gameVC.modalTransitionStyle = .crossDissolve
         

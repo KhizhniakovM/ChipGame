@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ChooseDefendersView: ChooseView {
+class ChooseDefendersView: BasicChooseView {
     // MARK: - UI
     lazy var chooseLabel = UILabel.makeBangerLabel(withText: "NOW CHOOSE YOUR DEFENDERS: ", font: Constants.Fonts.main, lines: 2)
     lazy var nextButton = UILabel.makeBangerLabel(withText: "PLAY >", font: Constants.Fonts.tertiary, lines: 1)
     
-    lazy var chooseFirstDefender = ChooseDefenderView()
-    lazy var chooseSecondDefender = ChooseDefenderView()
-    lazy var chooseThirdDefender = ChooseDefenderView()
+    lazy var chooseFirstDefender = BasicDefenderView()
+    lazy var chooseSecondDefender = BasicDefenderView()
+    lazy var chooseThirdDefender = BasicDefenderView()
     
     lazy var stack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [chooseFirstDefender, chooseSecondDefender, chooseThirdDefender])

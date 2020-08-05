@@ -9,13 +9,14 @@
 import UIKit
 
 class GameSpinnerView: UIView, SpinnerView {
+    // MARK: - Properties
     var completion: ((Color) -> Void)?
     
     // MARK: - UI
     lazy var goldenOverlay: UIImageView = {
         let overlay = UIImageView()
         overlay.translatesAutoresizingMaskIntoConstraints = false
-        overlay.image = UIImage(named: "GoldenOverlay")
+        overlay.image = Constants.goldenOverlay
         return overlay
     }()
     
@@ -57,15 +58,15 @@ class GameSpinnerView: UIView, SpinnerView {
             goldenOverlay.rightAnchor.constraint(equalTo: self.rightAnchor),
             goldenOverlay.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-            fortuneWheel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -(UIScreen.main.bounds.width / 10)),
-            fortuneWheel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            fortuneWheel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -(UIScreen.main.bounds.width / 10.55)),
+            fortuneWheel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -(UIScreen.main.bounds.width / 150)),
+            fortuneWheel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.735),
             fortuneWheel.heightAnchor.constraint(equalTo: self.fortuneWheel.widthAnchor),
-            fortuneWheel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
             
             arrow.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             arrow.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -(UIScreen.main.bounds.width / 2.075)),
             arrow.widthAnchor.constraint(equalTo: arrow.heightAnchor),
-            arrow.widthAnchor.constraint(equalTo: fortuneWheel.widthAnchor, multiplier: 0.35),
+            arrow.widthAnchor.constraint(equalTo: fortuneWheel.widthAnchor, multiplier: 0.45),
         ])
     }
 

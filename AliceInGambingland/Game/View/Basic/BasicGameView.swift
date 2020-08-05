@@ -13,7 +13,7 @@ class BasicGameView: UIView {
     lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "bcgr")
+        imageView.image = Constants.bcgr
         return imageView
     }()
     

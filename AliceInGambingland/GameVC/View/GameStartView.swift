@@ -9,6 +9,7 @@
 import UIKit
 
 class GameStartView: BasicGameView {
+    // MARK: - Properties
     var completion: ((Color) -> Void)?
     
     // MARK: - UI

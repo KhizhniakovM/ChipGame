@@ -22,10 +22,10 @@ class GameViewModel {
     var winner: Color?
     var goldenChips: Int {
         get {
-            return UserDefaults.standard.integer(forKey: UserDefaults.Keys.goldenChipsCount)
+            return UserDefaults.standard.integer(forKey: Constants.Keys.goldenChipsCount)
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaults.Keys.goldenChipsCount)
+            UserDefaults.standard.set(newValue, forKey: Constants.Keys.goldenChipsCount)
         }
     }
     

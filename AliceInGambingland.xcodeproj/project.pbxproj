@@ -26,7 +26,6 @@
 		B313418D24D1864500C939A0 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313418C24D1864500C939A0 /* GameStartView.swift */; };
 		B313419924D1BE6300C939A0 /* GameSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313419824D1BE6300C939A0 /* GameSpinnerView.swift */; };
 		B313419B24D1C85E00C939A0 /* GameSpinnerTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313419A24D1C85E00C939A0 /* GameSpinnerTutorialView.swift */; };
-		B322EABB24DAB5DA00FBD63A /* Ex+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B322EABA24DAB5DA00FBD63A /* Ex+UserDefaults.swift */; };
 		B3A3927824D80BDD00E53015 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3927724D80BDD00E53015 /* SpinnerView.swift */; };
 		B3A3927B24D8150900E53015 /* SomeChips.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3927A24D8150900E53015 /* SomeChips.swift */; };
 		B3A3927D24D8381000E53015 /* BasicFinishGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3927C24D8381000E53015 /* BasicFinishGameView.swift */; };
@@ -57,7 +56,6 @@
 		B313418C24D1864500C939A0 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		B313419824D1BE6300C939A0 /* GameSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSpinnerView.swift; sourceTree = "<group>"; };
 		B313419A24D1C85E00C939A0 /* GameSpinnerTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSpinnerTutorialView.swift; sourceTree = "<group>"; };
-		B322EABA24DAB5DA00FBD63A /* Ex+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UserDefaults.swift"; sourceTree = "<group>"; };
 		B3A3927724D80BDD00E53015 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		B3A3927A24D8150900E53015 /* SomeChips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeChips.swift; sourceTree = "<group>"; };
 		B3A3927C24D8381000E53015 /* BasicFinishGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicFinishGameView.swift; sourceTree = "<group>"; };
@@ -98,9 +96,8 @@
 			children = (
 				B313414524D0293400C939A0 /* AppDelegate.swift */,
 				B3D39C7A24D2C3B800DD14AD /* GameModel.swift */,
-				B3D39C7C24D2C95400DD14AD /* Chipper.swift */,
-				B313417424D065B300C939A0 /* Choose */,
-				B313417524D065C000C939A0 /* Game */,
+				B313417424D065B300C939A0 /* ChooseVC */,
+				B313417524D065C000C939A0 /* GameVC */,
 				B3A3927924D80BF100E53015 /* Protocols */,
 				B313416424D03AB100C939A0 /* Extensions */,
 				B313415D24D033AC00C939A0 /* Fonts */,
@@ -120,7 +117,6 @@
 		B313416424D03AB100C939A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B322EABA24DAB5DA00FBD63A /* Ex+UserDefaults.swift */,
 				B313416224D03A1E00C939A0 /* Ex+UIButton.swift */,
 				B313416524D0425200C939A0 /* Ex+UILabel.swift */,
 			);
@@ -137,24 +133,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B313417424D065B300C939A0 /* Choose */ = {
+		B313417424D065B300C939A0 /* ChooseVC */ = {
 			isa = PBXGroup;
 			children = (
 				B313414924D0293400C939A0 /* ChooseViewController.swift */,
 				B313415924D02DE300C939A0 /* ChooseViewModel.swift */,
 				B313416F24D04CB500C939A0 /* View */,
 			);
-			path = Choose;
+			path = ChooseVC;
 			sourceTree = "<group>";
 		};
-		B313417524D065C000C939A0 /* Game */ = {
+		B313417524D065C000C939A0 /* GameVC */ = {
 			isa = PBXGroup;
 			children = (
 				B313417624D0664C00C939A0 /* GameViewController.swift */,
 				B313417E24D069E800C939A0 /* GameViewModel.swift */,
 				B313418B24D1861500C939A0 /* View */,
 			);
-			path = Game;
+			path = GameVC;
 			sourceTree = "<group>";
 		};
 		B313418924D185ED00C939A0 /* Basic */ = {
@@ -199,6 +195,7 @@
 		B3E4400E24D45ECA00A737CF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B3D39C7C24D2C95400DD14AD /* Chipper.swift */,
 				B313415F24D0347600C939A0 /* Constants.swift */,
 				B313415024D0293700C939A0 /* LaunchScreen.storyboard */,
 				B313415324D0293700C939A0 /* Info.plist */,
@@ -283,7 +280,6 @@
 				B313418D24D1864500C939A0 /* GameStartView.swift in Sources */,
 				B313416E24D04CA600C939A0 /* ChooseDefendersView.swift in Sources */,
 				B313414A24D0293400C939A0 /* ChooseViewController.swift in Sources */,
-				B322EABB24DAB5DA00FBD63A /* Ex+UserDefaults.swift in Sources */,
 				B3CE255724D42D7800FAD48C /* FortuneWheel.swift in Sources */,
 				B3A3927824D80BDD00E53015 /* SpinnerView.swift in Sources */,
 				B313416C24D0490600C939A0 /* ChooseColorView.swift in Sources */,

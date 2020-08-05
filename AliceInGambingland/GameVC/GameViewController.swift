@@ -56,7 +56,8 @@ class GameViewController: UIViewController {
     }
     
     private func setupPlayerColor() {
-        guard let chipper = self.viewModel.chipper, let myChips = self.viewModel.myChips, let enemyChips = self.viewModel.enemyChips else { return }
+        guard let chipper = self.viewModel.chipper,
+            let myChips = self.viewModel.myChips, let enemyChips = self.viewModel.enemyChips else { return }
         self.gameStartView.leftPlayer.image = chipper.makePlayerColor(of: myChips.king.color)
         self.gameStartView.rightPlayer.image = chipper.makePlayerColor(of: enemyChips.king.color)
     }
@@ -152,11 +153,13 @@ class GameViewController: UIViewController {
                 self.viewModel.enemyChips = enemyChips
                 self.view.isUserInteractionEnabled = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                    self?.gameStartView.fortuneWheel.spin()
+                    guard let self = self else { return }
+                    self.gameStartView.fortuneWheel.spin()
                 }
             }
             UIView.transition(with: self.view, duration: 0.5, options: [.transitionCrossDissolve], animations: { [weak self] in
-                self?.view.addSubview(self!.gameSpinnerView as! UIView)
+                guard let self = self else { return }
+                self.view.addSubview(self.gameSpinnerView as! UIView)
             })
         } else {
             gameSpinnerView = GameSpinnerView(frame: self.view.bounds)
@@ -173,7 +176,8 @@ class GameViewController: UIViewController {
                 if self.viewModel.endOfTheGame == false {
                     self.view.isUserInteractionEnabled = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                        self?.gameStartView.fortuneWheel.spin()
+                        guard let self = self else { return }
+                        self.gameStartView.fortuneWheel.spin()
                     }
                 }
             }

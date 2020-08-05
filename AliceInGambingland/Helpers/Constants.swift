@@ -29,6 +29,10 @@ enum Constants {
         static let tertiary = UIFont(name: "Bangers-Regular", size: 35)
     }
     
+    enum Keys {
+        static let goldenChipsCount = "GoldenChips"
+    }
+    
     static let whiteChip = UIImage(named: "WhiteChip")
     static let redChip = UIImage(named: "RedChip")
     static let goldenChip = UIImage(named: "GoldenChip")

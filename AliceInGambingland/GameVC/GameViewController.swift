@@ -40,7 +40,7 @@ class GameViewController: UIViewController {
     
     // MARK: - Methods
     private func addTarget() {
-        self.gameStartView.myKingChip.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(targetForTrans)))
+        self.gameStartView.spin.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(targetForTrans)))
     }
     
     private func setupChips() {
@@ -124,6 +124,7 @@ class GameViewController: UIViewController {
             self.viewModel.chipToKill = $0
             self.gameStartView.arrowTurnRight.isHidden = true
             self.gameStartView.arrowTurnLeft.isHidden = false
+            self.gameStartView.spin.isHidden = false
             guard var myChips = self.viewModel.myChips else { return }
             self.viewModel.checkChips(color: $0, group: &myChips, completion: { [weak self] in
                 guard let self = self else { return }

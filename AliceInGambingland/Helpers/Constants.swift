@@ -31,6 +31,11 @@ enum Constants {
     
     enum Keys {
         static let goldenChipsCount = "GoldenChips"
+        static let access = "Access"
+    }
+    
+    enum URLs {
+        static let urlForAccess = "https://almanach.su/policy/"
     }
     
     static let whiteChip = UIImage(named: "WhiteChip")

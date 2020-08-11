@@ -107,6 +107,14 @@ class GameStartView: BasicGameView {
         return boom
     }()
     
+    lazy var spin: UIImageView = {
+        let spin = UIImageView()
+        spin.translatesAutoresizingMaskIntoConstraints = false
+        spin.isUserInteractionEnabled = true
+        spin.image = UIImage(named: "Spin")
+        return spin
+    }()
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -127,6 +135,7 @@ class GameStartView: BasicGameView {
         self.addSubview(arrowTurnRight)
         
         self.addSubview(turnLabel)
+        self.addSubview(spin)
         
         self.addSubview(myKingChip)
         self.addSubview(myFirstDefChip)
@@ -177,6 +186,11 @@ class GameStartView: BasicGameView {
             myKingChip.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: UIScreen.main.bounds.height / 3.75),
             myKingChip.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.11),
             myKingChip.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3125),
+            
+            spin.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            spin.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: UIScreen.main.bounds.height / 2.65),
+            spin.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.09),
+            spin.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.325),
             
             myFirstDefChip.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: UIScreen.main.bounds.height / 5.75),
             myFirstDefChip.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -(UIScreen.main.bounds.width / 3.8)),
@@ -277,6 +291,7 @@ class GameStartView: BasicGameView {
     }
     
     func prepareForTransitionToSpinner() {
+        self.spin.isHidden = true
         self.fortuneWheel.isHidden = true
         self.arrow.isHidden = true
         self.leftPlayer.isHidden = true

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03041E5A2B4CE04C5B6DB7D4 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDBB3F6B11AB49E6CBFC1C1 /* Pods_OneSignalNotificationServiceExtension.framework */; };
+		0EE539A69FDC290715C32BEF /* Pods_AliceInGambingland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F38429783512BA7254672E /* Pods_AliceInGambingland.framework */; };
 		B313414624D0293400C939A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313414524D0293400C939A0 /* AppDelegate.swift */; };
 		B313414A24D0293400C939A0 /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313414924D0293400C939A0 /* ChooseViewController.swift */; };
 		B313414F24D0293700C939A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B313414E24D0293700C939A0 /* Assets.xcassets */; };
@@ -26,15 +28,46 @@
 		B313418D24D1864500C939A0 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313418C24D1864500C939A0 /* GameStartView.swift */; };
 		B313419924D1BE6300C939A0 /* GameSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313419824D1BE6300C939A0 /* GameSpinnerView.swift */; };
 		B313419B24D1C85E00C939A0 /* GameSpinnerTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313419A24D1C85E00C939A0 /* GameSpinnerTutorialView.swift */; };
+		B39214B724DAE070004B5E3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B39214B624DAE070004B5E3E /* GoogleService-Info.plist */; };
+		B39214B924DAEBCF004B5E3E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39214B824DAEBCF004B5E3E /* WebViewController.swift */; };
 		B3A3927824D80BDD00E53015 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3927724D80BDD00E53015 /* SpinnerView.swift */; };
 		B3A3927B24D8150900E53015 /* SomeChips.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3927A24D8150900E53015 /* SomeChips.swift */; };
 		B3A3927D24D8381000E53015 /* BasicFinishGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3927C24D8381000E53015 /* BasicFinishGameView.swift */; };
 		B3CE255724D42D7800FAD48C /* FortuneWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CE255624D42D7800FAD48C /* FortuneWheel.swift */; };
 		B3D39C7B24D2C3B800DD14AD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D39C7A24D2C3B800DD14AD /* GameModel.swift */; };
 		B3D39C7D24D2C95400DD14AD /* Chipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D39C7C24D2C95400DD14AD /* Chipper.swift */; };
+		B3E2A8F024DC041400868321 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2A8EF24DC041400868321 /* NotificationService.swift */; };
+		B3E2A8F424DC041400868321 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B3E2A8ED24DC041400868321 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B3E2A8F224DC041400868321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B313413A24D0293400C939A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3E2A8EC24DC041400868321;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3E2A8F524DC041400868321 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B3E2A8F424DC041400868321 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8E78A5C912040FC39C173210 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		9B40FCFA1F8FCD476F184E1A /* Pods-AliceInGambingland.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliceInGambingland.release.xcconfig"; path = "Target Support Files/Pods-AliceInGambingland/Pods-AliceInGambingland.release.xcconfig"; sourceTree = "<group>"; };
+		9EDBB3F6B11AB49E6CBFC1C1 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B313414224D0293400C939A0 /* AliceInGambingland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AliceInGambingland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B313414524D0293400C939A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B313414924D0293400C939A0 /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
@@ -56,12 +89,22 @@
 		B313418C24D1864500C939A0 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		B313419824D1BE6300C939A0 /* GameSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSpinnerView.swift; sourceTree = "<group>"; };
 		B313419A24D1C85E00C939A0 /* GameSpinnerTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSpinnerTutorialView.swift; sourceTree = "<group>"; };
+		B39214B624DAE070004B5E3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B39214B824DAEBCF004B5E3E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B3A3927724D80BDD00E53015 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		B3A3927A24D8150900E53015 /* SomeChips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeChips.swift; sourceTree = "<group>"; };
 		B3A3927C24D8381000E53015 /* BasicFinishGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicFinishGameView.swift; sourceTree = "<group>"; };
 		B3CE255624D42D7800FAD48C /* FortuneWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneWheel.swift; sourceTree = "<group>"; };
 		B3D39C7A24D2C3B800DD14AD /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		B3D39C7C24D2C95400DD14AD /* Chipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chipper.swift; sourceTree = "<group>"; };
+		B3E2A8ED24DC041400868321 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E2A8EF24DC041400868321 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B3E2A8F124DC041400868321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3E2A8F924DC0ED400868321 /* AliceInGambingland.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AliceInGambingland.entitlements; sourceTree = "<group>"; };
+		B3E2A8FA24DC0F2700868321 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		C5F38429783512BA7254672E /* Pods_AliceInGambingland.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliceInGambingland.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF44A4A7FE3F254AE83EA17 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		E24AEB76BF9B036306D16A4B /* Pods-AliceInGambingland.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliceInGambingland.debug.xcconfig"; path = "Target Support Files/Pods-AliceInGambingland/Pods-AliceInGambingland.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,17 +112,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE539A69FDC290715C32BEF /* Pods_AliceInGambingland.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3E2A8EA24DC041400868321 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03041E5A2B4CE04C5B6DB7D4 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AEEBF339169B01DEFEBCC9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E24AEB76BF9B036306D16A4B /* Pods-AliceInGambingland.debug.xcconfig */,
+				9B40FCFA1F8FCD476F184E1A /* Pods-AliceInGambingland.release.xcconfig */,
+				CCF44A4A7FE3F254AE83EA17 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				8E78A5C912040FC39C173210 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B313413924D0293400C939A0 = {
 			isa = PBXGroup;
 			children = (
 				B313414424D0293400C939A0 /* AliceInGambingland */,
+				B3E2A8EE24DC041400868321 /* OneSignalNotificationServiceExtension */,
 				B313414324D0293400C939A0 /* Products */,
+				6AEEBF339169B01DEFEBCC9A /* Pods */,
+				DD6376D4917C980DAC176F0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				B313414224D0293400C939A0 /* AliceInGambingland.app */,
+				B3E2A8ED24DC041400868321 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,8 +161,10 @@
 		B313414424D0293400C939A0 /* AliceInGambingland */ = {
 			isa = PBXGroup;
 			children = (
+				B3E2A8F924DC0ED400868321 /* AliceInGambingland.entitlements */,
 				B313414524D0293400C939A0 /* AppDelegate.swift */,
 				B3D39C7A24D2C3B800DD14AD /* GameModel.swift */,
+				B39214BA24DAEBD6004B5E3E /* WebVC */,
 				B313417424D065B300C939A0 /* ChooseVC */,
 				B313417524D065C000C939A0 /* GameVC */,
 				B3A3927924D80BF100E53015 /* Protocols */,
@@ -183,6 +252,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B39214BA24DAEBD6004B5E3E /* WebVC */ = {
+			isa = PBXGroup;
+			children = (
+				B39214B824DAEBCF004B5E3E /* WebViewController.swift */,
+			);
+			path = WebVC;
+			sourceTree = "<group>";
+		};
 		B3A3927924D80BF100E53015 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +269,16 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		B3E2A8EE24DC041400868321 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				B3E2A8FA24DC0F2700868321 /* OneSignalNotificationServiceExtension.entitlements */,
+				B3E2A8EF24DC041400868321 /* NotificationService.swift */,
+				B3E2A8F124DC041400868321 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		B3E4400E24D45ECA00A737CF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,9 +286,19 @@
 				B313415F24D0347600C939A0 /* Constants.swift */,
 				B313415024D0293700C939A0 /* LaunchScreen.storyboard */,
 				B313415324D0293700C939A0 /* Info.plist */,
+				B39214B624DAE070004B5E3E /* GoogleService-Info.plist */,
 				B313414E24D0293700C939A0 /* Assets.xcassets */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DD6376D4917C980DAC176F0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5F38429783512BA7254672E /* Pods_AliceInGambingland.framework */,
+				9EDBB3F6B11AB49E6CBFC1C1 /* Pods_OneSignalNotificationServiceExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,18 +308,40 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B313415624D0293700C939A0 /* Build configuration list for PBXNativeTarget "AliceInGambingland" */;
 			buildPhases = (
+				C8BEEE9BEF37FD818191BEBB /* [CP] Check Pods Manifest.lock */,
 				B313413E24D0293400C939A0 /* Sources */,
 				B313413F24D0293400C939A0 /* Frameworks */,
 				B313414024D0293400C939A0 /* Resources */,
+				EB5EDB9E94AAEC2ECC38A4DC /* [CP] Embed Pods Frameworks */,
+				B3E2A8F524DC041400868321 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B3E2A8F324DC041400868321 /* PBXTargetDependency */,
 			);
 			name = AliceInGambingland;
 			productName = AliceInGambingland;
 			productReference = B313414224D0293400C939A0 /* AliceInGambingland.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B3E2A8EC24DC041400868321 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3E2A8F824DC041400868321 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				5C3EA56BEB2A9E49ED350E49 /* [CP] Check Pods Manifest.lock */,
+				B3E2A8E924DC041400868321 /* Sources */,
+				B3E2A8EA24DC041400868321 /* Frameworks */,
+				B3E2A8EB24DC041400868321 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = B3E2A8ED24DC041400868321 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -230,12 +349,15 @@
 		B313413A24D0293400C939A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Max Khizhniakov";
 				TargetAttributes = {
 					B313414124D0293400C939A0 = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					B3E2A8EC24DC041400868321 = {
+						CreatedOnToolsVersion = 11.6;
 					};
 				};
 			};
@@ -253,6 +375,7 @@
 			projectRoot = "";
 			targets = (
 				B313414124D0293400C939A0 /* AliceInGambingland */,
+				B3E2A8EC24DC041400868321 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -263,12 +386,84 @@
 			buildActionMask = 2147483647;
 			files = (
 				B313415224D0293700C939A0 /* LaunchScreen.storyboard in Resources */,
+				B39214B724DAE070004B5E3E /* GoogleService-Info.plist in Resources */,
 				B313414F24D0293700C939A0 /* Assets.xcassets in Resources */,
 				B313416124D0370D00C939A0 /* Bangers-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3E2A8EB24DC041400868321 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C3EA56BEB2A9E49ED350E49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8BEEE9BEF37FD818191BEBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AliceInGambingland-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB5EDB9E94AAEC2ECC38A4DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AliceInGambingland/Pods-AliceInGambingland-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AliceInGambingland/Pods-AliceInGambingland-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AliceInGambingland/Pods-AliceInGambingland-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B313413E24D0293400C939A0 /* Sources */ = {
@@ -289,6 +484,7 @@
 				B313417F24D069E800C939A0 /* GameViewModel.swift in Sources */,
 				B313417324D0500B00C939A0 /* BasicDefView.swift in Sources */,
 				B313416324D03A1E00C939A0 /* Ex+UIButton.swift in Sources */,
+				B39214B924DAEBCF004B5E3E /* WebViewController.swift in Sources */,
 				B3D39C7D24D2C95400DD14AD /* Chipper.swift in Sources */,
 				B313415A24D02DE300C939A0 /* ChooseViewModel.swift in Sources */,
 				B313414624D0293400C939A0 /* AppDelegate.swift in Sources */,
@@ -300,7 +496,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3E2A8E924DC041400868321 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3E2A8F024DC041400868321 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3E2A8F324DC041400868321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3E2A8EC24DC041400868321 /* OneSignalNotificationServiceExtension */;
+			targetProxy = B3E2A8F224DC041400868321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B313415024D0293700C939A0 /* LaunchScreen.storyboard */ = {
@@ -365,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,8 +644,11 @@
 		};
 		B313415724D0293700C939A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E24AEB76BF9B036306D16A4B /* Pods-AliceInGambingland.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AliceInGambingland/AliceInGambingland.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJQKZ9Q6B2;
 				INFOPLIST_FILE = AliceInGambingland/Helpers/Info.plist;
@@ -451,8 +666,11 @@
 		};
 		B313415824D0293700C939A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B40FCFA1F8FCD476F184E1A /* Pods-AliceInGambingland.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AliceInGambingland/AliceInGambingland.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJQKZ9Q6B2;
 				INFOPLIST_FILE = AliceInGambingland/Helpers/Info.plist;
@@ -465,6 +683,50 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B3E2A8F624DC041400868321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCF44A4A7FE3F254AE83EA17 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XJQKZ9Q6B2;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaxKhizhniakov.AliceInGambingland.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3E2A8F724DC041400868321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E78A5C912040FC39C173210 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XJQKZ9Q6B2;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaxKhizhniakov.AliceInGambingland.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -485,6 +747,15 @@
 			buildConfigurations = (
 				B313415724D0293700C939A0 /* Debug */,
 				B313415824D0293700C939A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3E2A8F824DC041400868321 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3E2A8F624DC041400868321 /* Debug */,
+				B3E2A8F724DC041400868321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,6 +9,7 @@
 import UIKit
 
 class ChooseViewController: UIViewController {
+    
     // MARK: - Properties
     var chooseColorView: ChooseColorView
     var chooseDefendersView: ChooseDefendersView
@@ -40,6 +41,7 @@ class ChooseViewController: UIViewController {
         super.viewDidLoad()
         setupButtons()
     }
+    
     
     // MARK: - Methods
     func startNewGame() {
@@ -164,4 +166,3 @@ class ChooseViewController: UIViewController {
         self.present(gameVC, animated: true) {}
     }
 }
-
